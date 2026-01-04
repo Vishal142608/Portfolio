@@ -22,9 +22,8 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('main.urls')),        # main app root
-      path('', RedirectView.as_view(url='/portfolio/', permanent=False)),
-    path('portfolio/', include('main.urls')),  # portfolio prefix
+    path('', include('main.urls')),        
+    path('portfolio/', include('main.urls'))
 ]
 
 if settings.DEBUG:

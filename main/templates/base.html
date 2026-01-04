@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>{% block title %}Portfolio{% endblock %}</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    <span style="color: #567e9cff;">V</span>ishal
+  </div>
+
+  <!-- DESKTOP NAV -->
+ <nav class="desktop-nav">
+  <a href="{% url 'Portfolio-home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+
+  <a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+
+  <a href="{% url 'skills' %}" class="{% if request.resolver_match.url_name == 'skills' %}active{% endif %}">Skills</a>
+
+  <a href="{% url 'content' %}" class="{% if request.resolver_match.url_name == 'content' %}active{% endif %}">Contact</a>
+
+  <a href="{% url 'projects' %}" class="{% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Projects</a>
+
+  <a href="{% url 'experience' %}" class="{% if request.resolver_match.url_name == 'experience' %}active{% endif %}">Experience</a>
+</nav>
+
+  <!-- MOBILE ICON -->
+  <div class="icon" id="menuBtn">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+</header>
+
+<!-- MOBILE SIDE NAV -->
+<nav class="side-nav" id="sideNav">
+  <a href="{% url 'Portfolio-home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+
+  <a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+
+  <a href="{% url 'skills' %}" class="{% if request.resolver_match.url_name == 'skills' %}active{% endif %}">Skills</a>
+
+  <a href="{% url 'content' %}" class="{% if request.resolver_match.url_name == 'content' %}active{% endif %}">Contact</a>
+
+  <a href="{% url 'projects' %}" class="{% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Projects</a>
+
+  <a href="{% url 'experience' %}" class="{% if request.resolver_match.url_name == 'experience' %}active{% endif %}">Experience</a>
+</nav>
+
+
+
+<div class="content">
+  {% block content %}
+  {% endblock %}
+</div>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const sideNav = document.getElementById("sideNav");
+  const icon = menuBtn.querySelector("i");
+
+  menuBtn.addEventListener("click", () => {
+    sideNav.classList.toggle("active");
+
+    if (sideNav.classList.contains("active")) {
+      icon.classList.replace("fa-bars", "fa-xmark");
+    } else {
+      icon.classList.replace("fa-xmark", "fa-bars");
+    }
+  });
+
+  document.querySelectorAll(".side-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      sideNav.classList.remove("active");
+      icon.classList.replace("fa-xmark", "fa-bars"); // icon bhi reset
+    });
+  });
+</script>
+
+
+</body>
+</html>

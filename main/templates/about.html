@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+
+<section class="about-section">
+
+  <h1 class="about-heading">ABOUT ME</h1>
+
+  <!-- ABOUT CARD -->
+  <div class="about-card">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-image">
+      {% if profile and profile.image %}
+        <img src="{{ profile.image.url }}" alt="Profile Image">
+      {% else %}
+        <img src="{% static 'images/default-profile.png' %}" alt="Profile">
+      {% endif %}
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-content">
+      <h2 class="about-name">Vishal Saini <br><span class="about-role">Django Backend Developer</span></h2>
+
+
+      <p>
+        I am Vishal Saini, a<b>Django Backend Developer</b>Currently pursuing my BCA from Inmantec University From Ghazibad.<br> I specialize in building scalable web applications using the Full Stack(Django, Python, MySQL, HTML, CSS, JS) and have experience across both front-end and back-end development. My technical skills include HTML, CSS, JavaScript, Tailwind CSS,</b>.
+      </p>
+
+      <p>
+        Currently improving my skills in authentication, databases, REST APIs,
+        and system design by building real-world projects.
+      </p>
+
+      <!-- SOCIAL LINKS -->
+      <div class="about-socials" style="margin-top:10px;">
+        <!-- GitHub -->
+      
+<!-- GitHub -->
+            <!-- GitHub -->
+<a href="https://github.com/yourusername" target="_blank" style="margin-right:10px;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="#00bfff">
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.577v-2.234c-3.338.724-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.082-.729.082-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.304-5.466-1.332-5.466-5.932 0-1.31.468-2.381 1.236-3.222-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.841 1.236 1.912 1.236 3.222 0 4.61-2.803 5.625-5.475 5.921.43.371.814 1.102.814 2.222v3.293c0 .319.218.694.825.576C20.565 21.796 24 17.303 24 12c0-6.63-5.373-12-12-12z"/>
+  </svg>
+</a>
+
+<!-- Instagram (Adjusted size to 30x30) -->
+<a href="https://www.instagram.com/yourprofile" target="_blank" style="margin-right:10px;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 512 512" fill="#00bfff">
+    <path d="M349.33 69.33H162.67C105.33 69.33 64 110.67 64 168v181.33c0 57.33 41.33 98.67 98.67 98.67h186.67c57.33 0 98.67-41.33 98.67-98.67V168c0-57.33-41.34-98.67-98.68-98.67zm65.34 279.33c0 35.33-28.67 64-64 64H162.67c-35.33 0-64-28.67-64-64V168c0-35.33 28.67-64 64-64h186.67c35.33 0 64 28.67 64 64v181.33z"/>
+    <circle cx="256" cy="256" r="80"/>
+    <circle cx="352" cy="160" r="24"/>
+  </svg>
+</a>
+
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+  <svg viewBox="0 0 24 24" width="30" height="38" fill="#00bfff">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.225 0z"/>
+  </svg>
+</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ EXPLORE MORE SECTION -->
+  
+<div class="content-explore-separator">
+  <div class="explore-more">
+    <h2>Explore More</h2>
+
+    <div class="explore-grid">
+      <div class="explore-card">
+        <a href="{% url 'about' %}">
+          <h3>About</h3>
+        </a>
+        <p>Learn more about my journey and background.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'skills' %}">
+          <h3>Skills</h3>
+        </a>
+        <p>Discover the skills and technologies I work with.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'content' %}">
+          <h3>Contact</h3>
+        </a>
+        <p>Get in touch with me for any inquiries.</p>
+      </div>
+
+       <div class="explore-card">
+        <a href="{% url 'projects' %}">
+          <h3>Projects</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+ <div class="explore-card">
+        <a href="{% url 'experience' %}">
+          <h3>Experience</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ✅ COMMON FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>Thank you for visiting my website! I hope you enjoyed exploring my projects and learning about my journey as a developer.</p>
+    <div class="footer-links">
+      <a href="#">© 2024 Ayush. All rights reserved.</a>
+      <a href="{% url 'content' %}">Connect with Me</a>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

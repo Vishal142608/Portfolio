@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}?v=4">
+
+{% block title %}Experience{% endblock %}
+
+{% block content %}
+
+<section class="timeline-section">
+  <h1 class="timeline-title">EXPERIENCE</h1>
+
+  <div class="timeline">
+
+    <!-- ITEM 1 (RIGHT) -->
+    <div class="timeline-item right">
+      <div class="visha">
+        <h2>Backend Developer (Learning Phase)</h2>
+        <span class="date">Nov 2025 – Present</span>
+        <p>
+          Learning and building backend applications using Python & Django.
+          Working on real-world portfolio projects with authentication,
+          CRUD operations and databases.
+        </p>
+        <ul>
+          <li>Django, Python, SQLite</li>
+          <li>Auth & CRUD systems</li>
+          <li>Git & GitHub</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ITEM 2 (LEFT) -->
+    <div class="timeline-item left">
+      <div class="visha">
+        <h2>Frontend Practice</h2>
+        <span class="date">Aug 2024 – Oct 2024</span>
+        <p>
+          Practiced frontend development to understand UI/UX and integration
+          with backend systems.
+        </p>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Responsive layouts</li>
+          <li>Portfolio UI design</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ITEM 3 (RIGHT) -->
+    <div class="timeline-item right">
+      <div class="visha">
+        <h2>Self Learning & Projects</h2>
+        <span class="date">Ongoing</span>
+        <p>
+          Continuously improving problem-solving skills and backend knowledge
+          by building projects and exploring Django Rest Framework.
+        </p>
+        <ul>
+          <li>Django REST Framework</li>
+          <li>APIs & JSON</li>
+          <li>Clean code practices</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="content-explore-separator">
+  <div class="explore-more">
+    <h2>Explore More</h2>
+
+    <div class="explore-grid">
+      <div class="explore-card">
+        <a href="{% url 'about' %}">
+          <h3>About</h3>
+        </a>
+        <p>Learn more about my journey and background.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'skills' %}">
+          <h3>Skills</h3>
+        </a>
+        <p>Discover the skills and technologies I work with.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'content' %}">
+          <h3>Contact</h3>
+        </a>
+        <p>Get in touch with me for any inquiries.</p>
+      </div>
+
+       <div class="explore-card">
+        <a href="{% url 'projects' %}">
+          <h3>Projects</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+ <div class="explore-card">
+        <a href="{% url 'experience' %}">
+          <h3>Experience</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ✅ COMMON FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>Thank you for visiting my website! I hope you enjoyed exploring my projects and learning about my journey as a developer.</p>
+    <div class="footer-links">
+      <a href="#">© 2024 Ayush. All rights reserved.</a>
+      <a href="{% url 'content' %}">Connect with Me</a>
+    </div>
+  </div>
+</footer>
+
+
+{% endblock %}

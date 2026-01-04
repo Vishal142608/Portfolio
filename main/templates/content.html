@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}?v=4">
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<section class="contact-section" id="contact">
+  <h1 class="contact-title">CONTACT</h1>
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-left">
+      <h2>Let's chat.</h2>
+      <p>
+        If you're looking for a dedicated backend developer skilled in Python,
+        Django, and modern web technologies, I'm eager to collaborate.
+      </p>
+
+      <div class="contact-info">
+        <p>📧 karan1234pkw@gmail.com</p>
+        <p>📞 +91 8923 141 077</p>
+        <p>📍 Delhi, India</p>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-right">
+      <h2>Send me a Message 🚀</h2>
+
+      <form method="POST" action="">
+        {% csrf_token %}
+        <input type="text" name="full_name" placeholder="Full name*" required>
+        <input type="email" name="email" placeholder="Email*" required>
+        <textarea name="message" placeholder="Enter your Message*" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ✅ EXPLORE MORE SECTION -->
+
+<div class="content-explore-separator">
+  <div class="explore-more">
+    <h2>Explore More</h2>
+
+    <div class="explore-grid">
+      <div class="explore-card">
+        <a href="{% url 'about' %}">
+          <h3>About</h3>
+        </a>
+        <p>Learn more about my journey and background.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'skills' %}">
+          <h3>Skills</h3>
+        </a>
+        <p>Discover the skills and technologies I work with.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'content' %}">
+          <h3>Contact</h3>
+        </a>
+        <p>Get in touch with me for any inquiries.</p>
+      </div>
+
+       <div class="explore-card">
+        <a href="{% url 'projects' %}">
+          <h3>Projects</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+ <div class="explore-card">
+        <a href="{% url 'experience' %}">
+          <h3>Experience</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ✅ COMMON FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>Thank you for visiting my website! I hope you enjoyed exploring my projects and learning about my journey as a developer.</p>
+    <div class="footer-links">
+      <a href="#">© 2024 Ayush. All rights reserved.</a>
+      <a href="{% url 'content' %}">Connect with Me</a>
+    </div>
+  </div>
+</footer>
+
+
+{% endblock %}

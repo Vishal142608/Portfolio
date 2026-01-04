@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+
+ <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+
+<section class="skills-section">
+
+  <!-- SKILLS TITLE -->
+<div class="skills-title">
+  <h1>SKILLS</h1>
+</div>
+
+  <div class="skills-wrapper">
+
+    <!-- LEFT CONTENT -->
+    <div class="skill-info">
+      <h2 id="skill-title">HTML</h2>
+      <p id="skill-desc">
+        HTML is the foundational markup language used to create the structure of web pages.
+      </p>
+    </div>
+
+    <!-- RIGHT GRID -->
+    <div class="skills-grid">
+
+      <div class="skill-card" 
+           data-title="HTML"
+           data-desc="HTML is the foundational markup language used to create the structure of web pages. It allows developers to define elements such as headings, paragraphs, links, and images, forming the backbone of web content">
+        <i class="devicon-html5-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="CSS"
+           data-desc="CSS (Cascading Style Sheets) is used to style and layout web pages. It allows developers to control the color, font, spacing, and positioning of elements, enhancing the visual presentation of web content.">
+        <i class="devicon-css3-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="JavaScript"
+           data-desc="JavaScript is a powerful programming language that allows developers to create interactive and dynamic content on web pages. It can be used to control the behavior of different elements and make web pages more responsive.">
+        <i class="devicon-javascript-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="Python"
+           data-desc="Python is a versatile and powerful programming language known for its simplicity and readability. It's widely used for web development, data analysis, scientific computing, artificial intelligence, and many other applications. Its extensive library support and large community make it a top choice for developers.">
+        <i class="devicon-python-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="Django"
+           data-desc="Django is a high-level Python framework for building secure web applications.">
+        <i class="devicon-django-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="MySQL"
+           data-desc="MySQL is a relational database used to store and manage data.">
+        <i class="devicon-mysql-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="Tailwind CSS"
+           data-desc="Tailwind CSS is a utility-first CSS framework that provides low-level utility classes for styling. It allows developers to build custom designs quickly without leaving the HTML, making the development process faster and more efficient.">
+        <i class="devicon-tailwindcss-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="Postman"
+           data-desc="Postman is a collaborative platform for API development. It provides a user-friendly interface for testing and managing APIs, making it easier for developers to ensure that their APIs function as intended.">
+        <i class="devicon-postman-plain colored"></i>
+      </div>
+
+      <div class="skill-card"
+           data-title="Git"
+           data-desc="Git is a version control system that allows developers to track changes in their codebase and collaborate with others. It enables teams to manage code history, resolve conflicts, and maintain a clear record of code development over time.">
+        <i class="devicon-git-plain colored"></i>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+  <!-- ✅ EXPLORE MORE (ADDED) -->
+  
+<div class="content-explore-separator">
+  <div class="explore-more">
+    <h2>Explore More</h2>
+
+    <div class="explore-grid">
+      <div class="explore-card">
+        <a href="{% url 'about' %}">
+          <h3>About</h3>
+        </a>
+        <p>Learn more about my journey and background.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'skills' %}">
+          <h3>Skills</h3>
+        </a>
+        <p>Discover the skills and technologies I work with.</p>
+      </div>
+
+      <div class="explore-card">
+        <a href="{% url 'content' %}">
+          <h3>Contact</h3>
+        </a>
+        <p>Get in touch with me for any inquiries.</p>
+      </div>
+
+       <div class="explore-card">
+        <a href="{% url 'projects' %}">
+          <h3>Projects</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+ <div class="explore-card">
+        <a href="{% url 'experience' %}">
+          <h3>Experience</h3>
+        </a>
+        <p>View the projects I’ve been working on.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ✅ COMMON FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>Thank you for visiting my website! I hope you enjoyed exploring my projects and learning about my journey as a developer.</p>
+    <div class="footer-links">
+      <a href="#">© 2024 Ayush. All rights reserved.</a>
+      <a href="{% url 'content' %}">Connect with Me</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  const cards = document.querySelectorAll(".skill-card");
+  const title = document.getElementById("skill-title");
+  const desc = document.getElementById("skill-desc");
+
+  cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      title.textContent = card.dataset.title;
+      desc.textContent = card.dataset.desc;
+    });
+  });
+</script>
+
+
+
+{% endblock %}

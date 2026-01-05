@@ -25,11 +25,7 @@ SECRET_KEY = 'django-insecure-#&3525_dhbb$h-bw!mo^#%sie!ax#i4bjnn#f#47u@wp_4ok^2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    ".onrender.com",
-]
+ALLOWED_HOSTS = ['*']
 
 APPEND_SLASH = False
 
@@ -86,7 +82,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': '/data/db.sqlite3',
     }
 }
 
@@ -128,11 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",   # ✅ Ye line add karo
-]
+MEDIA_ROOT = '/data/media'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
